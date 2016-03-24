@@ -11,8 +11,12 @@ $ meteor add maxfi:remote-collection
 
 On client or server:
 
-```coffee
-MyCollection = new RemoteCollection 'mongodb://username:password@localhost:27017/database'
+```js
+// using a MongoDB URI
+MyCollection = new RemoteCollection('mongodb://username:password@localhost:27017/database');
+
+// or using an environment variable
+MyCollection = new RemoteCollection('SOME_ENV_VAR'); // Where `process.env.SOME_ENV_VAR` is defined
 ```
 
 ## To Do
