@@ -1,4 +1,4 @@
-RemoteCollection = function(name, connectionString) {
+RemoteCollection = function(name, connectionString, connectionOptions) {
   if (Meteor.isClient) {
     return new Mongo.Collection(name);
   }
@@ -9,7 +9,7 @@ RemoteCollection = function(name, connectionString) {
       if (!connectionString) throw new Error('Please either pass a MongoDB URI or name of an existing environment variable');
     }
     return new Mongo.Collection(name, {
-      _driver: new MongoInternals.RemoteCollectionDriver(connectionString)
+      _driver: new MongoInternals.RemoteCollectionDriver(connectionString, connectionOptions)
     });
   }
 };
