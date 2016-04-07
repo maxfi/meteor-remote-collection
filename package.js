@@ -1,6 +1,6 @@
 Package.describe({
   name: 'maxfi:remote-collection',
-  version: '0.1.0',
+  version: '0.2.0',
   summary: 'Use additional MongoDB databases in your Meteor app.',
   git: 'https://github.com/maxfi/meteor-remote-collection.git',
   documentation: 'README.md'
