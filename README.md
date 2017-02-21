@@ -16,11 +16,14 @@ On client or server:
 MyCollection = new RemoteCollection('mongodb://username:password@localhost:27017/database');
 
 // or using an environment variable
-MyCollection = new RemoteCollection('SOME_ENV_VAR'); // Where `process.env.SOME_ENV_VAR` is defined
+MyCollection = new RemoteCollection('SOME_ENV_VAR'); // Where `process.env.SOME_ENV_VAR`
 
 // optionally pass in connection options
-var connectionOptions = {};
+var connectionOptions = {oplogUrl: 'mongodb://username:password@localhost:27017/local?authSource=admin'};
 MyCollection = new RemoteCollection('SOME_ENV_VAR', connectionOptions);
+
+// or optionally pass in OPLOG URI
+MyCollection = new RemoteCollection('SOME_ENV_VAR', 'SOME_OTHER_ENV_VAR'); // Where `process.env.SOME_OTHER_ENV_VAR`
 ```
 
 ## To Do
